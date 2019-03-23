@@ -2,7 +2,7 @@
 /* Noy Tvili 308426790 */
 using namespace std;
 #include "Game.h"
-#include "Player.h"
+//#include "Player.h"
 
 
  void Game::start(){
