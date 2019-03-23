@@ -14,7 +14,7 @@ private:
 	Card current; // the current card 
 	int num_of_players;
 	vector<Player> players_list;//vector of players
-	Player turn; // hows turn
+	//Player turn; // hows turn
 	string direction;
 	
 	void swap_dir(); //after change direction card
@@ -22,6 +22,7 @@ public:
 	//public members and functions
 	//Game();
 	void start();
+	void print_players();
 };
 #endif
 
