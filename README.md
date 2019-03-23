@@ -1,2 +1,2 @@
 # Taki
-Taki game
+Taki game project- c++
