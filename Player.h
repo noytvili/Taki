@@ -9,20 +9,19 @@ using namespace std;
 
 class Player {
 private:
+	string name; //name of player
 	int n; //num of cards
 	vector<Card> cards; // vector of cards
 	// more private members
 
 public:
-	string name; //name of player
-
 //	Player();
 	Player(string name="noy" , int n=1);
 
 	bool play(Card &current); //players turn /#
 	void show_cards(); //#
 	string get_name(); //#
-	void next_turn(); //update the turn 
+	//void next_turn(); //update the turn 
 };
 #endif
 
