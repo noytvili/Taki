@@ -3,7 +3,6 @@
 
 #include "Player.h"
 
-	
 	Player::Player(string name, int n){
 	    int j;
 		this->name = name;
@@ -13,8 +12,18 @@
 		    Card c(generate_card());
             cards.push_back(c);
         }
-		
+        std::cout << "whattttt" << std::endl;
 	}
+	
+// 	bool Player::isWin(){
+//     if(cards.size() == 0){
+//         cout << getName() << " Wins" << endl;
+//         return true;
+//     }
+//     else 
+//         return false;
+//     }
+
 	
 	void Player::show_cards(){
 	    int count=1;
@@ -35,7 +44,7 @@
     bool Player::play(Card &current){
         cout << "current: " << current << endl;
         cout<<"bla"<<endl;
-        cout << this->get_name() <<", your turn - " << endl;
+        cout << get_name() <<", your turn - " << endl;
         //show_cards();
         
     return true;
