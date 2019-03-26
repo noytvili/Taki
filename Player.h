@@ -21,6 +21,8 @@ public:
 
 	bool play(Card &current); //players turn /#
 	void show_cards(); //#
+	void options(Card &current);
+	bool isWinner();
 	string get_name(); //#
 	void next_turn(); //update the turn 
 	friend  ostream &operator<<(ostream &os,  Player& p);
