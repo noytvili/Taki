@@ -3,7 +3,6 @@
 
 #include "Player.h"
 
-	
 	Player::Player(string name, int n){
 	    int j;
 		this->name = name;
@@ -33,25 +32,23 @@
 	    bool flag =true;
 	    
 	    while(flag){
-	        cin>>choice;
-	        if(choice==0 || choice>cards.size()){ // not in range
+	        cin >> choice;
+	        if(choice == 0 || choice > cards.size()){ // not in range
 	            Card new_card(generate_card());
 	            cards.push_back(new_card);
 	            flag-false;//next turn
 	        }
-	        else{
+	        else {
 	            if(current.is_legal(cards.at(choice-1))){ // if he picks legal card
-	                current= (cards.at(choice-1));
+	                current = (cards.at(choice-1));
 	                cards.erase(cards.begin()+(choice-1));
-	                flag=false; //next turn
+	                flag = false; //next turn
 	            }
-	            else{ // not legal card
+	            else { // not legal card
 	                cout << "you can't put " << cards.at(choice-1) << " on " << current << endl;;
 	            }
 	        }
-	        
 	    }
-	    
 	}
 	
     string Player::get_name(){
@@ -68,7 +65,8 @@
     }
     
     bool Player::isWinner(){ //true if wins , false if not
-    if(cards.size()==0){
+    if(cards.size() == 0){
+    	cout << getName() << " Wins!" << endl;
         return true;
     }
     else return false;
