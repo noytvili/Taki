@@ -18,13 +18,12 @@ public:
 
 //	Player();
 	Player(string name="noy" , int n=1);
-
-	bool play(Card &current); //players turn /#
-	void show_cards(); //#
+	bool play(Card &current); //players turn 
+	void show_cards(); 
 	void options(Card &current);
 	bool isWinner();
 	string get_name(); //#
-	void next_turn(); //update the turn 
+	//void next_turn(); //update the turn 
 	friend  ostream &operator<<(ostream &os,  Player& p);
 	bool operator!= ( Player& p2);
 
