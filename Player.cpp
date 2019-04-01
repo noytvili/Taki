@@ -9,7 +9,7 @@
 		this->n = n;
 		
 		for(j=0; j<n; j++){
-		    Card c(generate_card());
+		    Card c(Card::generate_card());
             cards.push_back(c);
         }
 	}
@@ -27,25 +27,30 @@
 	   cout<<endl;
 	}
 	
-	void Player::options(Card &current){//options when the player pick a card
+	bool Player::options(Card &current){//options when the player pick a card
 	    int choice;
 	    bool flag =true;
 	    
 	    while(flag){
 	        cin >> choice;
 	        if(choice == 0 || choice > cards.size()){ // not in range
-	            Card new_card(generate_card());
+	            Card new_card(Card::generate_card());
 	            cards.push_back(new_card);
-	            flag-false;//next turn
+	            flag = false;//next turn
+	            return false;
+
 	        }
 	        else {
 	            if(current.is_legal(cards.at(choice-1))){ // if he picks legal card
 	                current = (cards.at(choice-1));
 	                cards.erase(cards.begin()+(choice-1));
 	                flag = false; //next turn
+	                return true;        
+
 	            }
 	            else { // not legal card
-	                cout << "you can't put " << cards.at(choice-1) << " on " << current << endl;;
+	                cout << "you can't put " << cards.at(choice-1) << " on " << current << endl;
+	                return false;
 	            }
 	        }
 	    }
@@ -66,7 +71,7 @@
     
     bool Player::isWinner(){ //true if wins , false if not
     if(cards.size() == 0){
-    	cout << getName() << " Wins!" << endl;
+    	cout << get_name() << " Wins!" << endl;
         return true;
     }
     else return false;
